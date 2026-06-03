@@ -1,0 +1,64 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f7f8fb;
+  --foreground: #101418;
+  --muted: #657080;
+  --surface: #ffffff;
+  --ink: #101418;
+  --cyan: #12c8d8;
+  --coral: #ff6d5a;
+  --lime: #b8f24b;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  background:
+    radial-gradient(circle at 12% 8%, rgba(18, 200, 216, 0.16), transparent 28%),
+    linear-gradient(180deg, #ffffff 0%, var(--background) 56%, #eef2f6 100%);
+  color: var(--foreground);
+  font-family: Arial, "Microsoft YaHei", "PingFang SC", sans-serif;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+.soft-grid {
+  background-image:
+    linear-gradient(rgba(16, 20, 24, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(16, 20, 24, 0.06) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+.glass-panel {
+  border: 1px solid rgba(16, 20, 24, 0.1);
+  background: rgba(255, 255, 255, 0.82);
+  box-shadow: 0 24px 70px rgba(20, 31, 44, 0.12);
+  backdrop-filter: blur(18px);
+}
+
+.input {
+  width: 100%;
+  border-radius: 0.375rem;
+  border: 1px solid #e2e8f0;
+  background: #ffffff;
+  padding: 0.75rem 1rem;
+  outline: none;
+}
+
+.input:focus {
+  border-color: var(--cyan);
+}

@@ -1,0 +1,33 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Simulation {
+  id        String   @id @default(cuid())
+  shareSlug String  @unique
+  userId    String?
+  title     String
+  summary   String
+  inputJson String
+  resultJson String
+  imageUrl  String?
+  textSource String @default("mock")
+  branchJson String?
+  partnerJson String?
+  createdAt DateTime @default(now())
+  user      User?    @relation(fields: [userId], references: [id])
+}
+
+model User {
+  id           String   @id @default(cuid())
+  email        String   @unique
+  name         String
+  passwordHash String
+  createdAt    DateTime @default(now())
+  simulations  Simulation[]
+}
